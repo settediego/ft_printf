@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegomor <diegomor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diego <diego@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 19:42:05 by diegomor          #+#    #+#             */
-/*   Updated: 2024/12/27 20:28:35 by diegomor         ###   ########.fr       */
+/*   Updated: 2024/12/28 18:45:45 by diego            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_printf (const char *format, ...)
 			
 		}
 		else
-			counter += // FUNCAO QUE VAI CONTAR E PRINTAR OS CARACTERES
+			counter += // FUNCAO QUE VAI CONTAR E PRINTAR OS CARACTERES PARA RETORNAR AO VALOR DE RETORNO DE PRINTF
 		format++;
 	}
 	va_end(args);
