@@ -6,7 +6,7 @@
 /*   By: diegomor <diegomor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 18:43:06 by diegomor          #+#    #+#             */
-/*   Updated: 2025/01/04 19:21:49 by diegomor         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:02:21 by diegomor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,15 @@ int	ft_putstr_src(char *s)
 	return (len);
 }
 
+int	ft_putnbr_src(int nbr)
+{
+	char	*nbtoa;
+	int		len;
+	
+	nbtoa = ft_itoa(nb);
+	if (nbtoa == NULL)
+		return (-1);
+	len = ft_putstr_src(nbtoa);
+	free(nbtoa);
+	return (len);
+}

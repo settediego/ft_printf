@@ -6,7 +6,7 @@
 /*   By: diegomor <diegomor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 19:42:05 by diegomor          #+#    #+#             */
-/*   Updated: 2025/01/04 19:27:19 by diegomor         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:02:16 by diegomor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	count_printed(va_list args, const char *format)
 	else if (*format == 'p')
 		counter = 
 	else if (*format == 'd' || *format == 'i')
-		counter = ft_putnbr
+		counter = ft_putnbr_src(va_args(args, int));
 	else if (*format == 'u')
 		counter = 
 	else if (*format == 'x')
