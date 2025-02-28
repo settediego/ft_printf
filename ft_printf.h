@@ -6,7 +6,7 @@
 /*   By: diegomor <diegomor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 18:45:54 by diegomor          #+#    #+#             */
-/*   Updated: 2025/01/04 21:02:45 by diegomor         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:36:31 by diegomor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@
 int	ft_putchar_src(char c);
 int	ft_putstr_src(char *s);
 int	ft_putnbr_src(int nbr);
+int	ft_putunsigned_src(unsigned int nbr);
 
 #endif

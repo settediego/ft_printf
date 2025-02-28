@@ -6,7 +6,7 @@
 /*   By: diegomor <diegomor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 19:42:05 by diegomor          #+#    #+#             */
-/*   Updated: 2025/01/04 21:02:16 by diegomor         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:41:59 by diegomor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	count_printed(va_list args, const char *format)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (*format == '\0')
@@ -26,9 +26,9 @@ static int	count_printed(va_list args, const char *format)
 	else if (*format == 'p')
 		counter = 
 	else if (*format == 'd' || *format == 'i')
-		counter = ft_putnbr_src(va_args(args, int));
+		counter = ft_putnbr_src(va_arg(args, int));
 	else if (*format == 'u')
-		counter = 
+		counter = ft_putunsigned_src(va_arg(args, unsigned int));
 	else if (*format == 'x')
 		counter = 
 	else if (*format == 'X')
@@ -38,23 +38,23 @@ static int	count_printed(va_list args, const char *format)
 	return (counter);
 }
 
-int	ft_printf (const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list			args;
 	unsigned int	counter;
 	int				check;
-	
+
 	va_start (args, format);
 	if (!format)
 		return (0);
 	counter = 0;
 	while (*format)
 	{
-		if(*format == '%')
+		if (*format == '%')
 		{
 			format++;
 			check = count_printed(args, format);
-			if(check > -1)
+			if (check > -1)
 				counter += check;
 			else
 				return (-1);
