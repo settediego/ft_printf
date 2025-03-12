@@ -6,7 +6,7 @@
 /*   By: diegomor <diegomor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 19:42:05 by diegomor          #+#    #+#             */
-/*   Updated: 2025/03/12 20:22:39 by diegomor         ###   ########.fr       */
+/*   Updated: 2025/03/12 23:11:22 by diegomor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ static int	print_and_count(va_list args, const char *format)
 		counter = ft_putnbr_src(va_arg(args, int));
 	else if (*format == 'u')
 		counter = ft_putunsigned_src(va_arg(args, unsigned int));
-	// else if (*format == 'x')
-	// 	counter = 
-	// else if (*format == 'X')
-	// 	counter = 
+	else if (*format == 'x')
+		counter = lower_x_to_hex(va_arg(args, int));
+	else if (*format == 'X')
+		counter = upper_x_to_hex(va_arg(args, int));
 	else if (*format == '%')
 		counter = ft_putchar_src('%');
 	return (counter);
@@ -65,16 +65,4 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	return (counter);
-}
-
-int	main(void)
-{
-	int	size;
-	int	size1;
-	char *s = NULL;
-
-	size = printf("%p\n", s);
-	size1 = ft_printf("%p\n", s);
-	printf("%d\n%d", size, size1);
-	return 0;
 }
