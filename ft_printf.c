@@ -6,13 +6,13 @@
 /*   By: diegomor <diegomor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 19:42:05 by diegomor          #+#    #+#             */
-/*   Updated: 2025/02/28 18:41:59 by diegomor         ###   ########.fr       */
+/*   Updated: 2025/03/12 20:22:39 by diegomor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	count_printed(va_list args, const char *format)
+static int	print_and_count(va_list args, const char *format)
 {
 	int	counter;
 
@@ -24,17 +24,17 @@ static int	count_printed(va_list args, const char *format)
 	else if (*format == 's')
 		counter = ft_putstr_src(va_arg(args, char *));
 	else if (*format == 'p')
-		counter = 
+		counter = ptr_to_hex(va_arg(args, uintptr_t));
 	else if (*format == 'd' || *format == 'i')
 		counter = ft_putnbr_src(va_arg(args, int));
 	else if (*format == 'u')
 		counter = ft_putunsigned_src(va_arg(args, unsigned int));
-	else if (*format == 'x')
-		counter = 
-	else if (*format == 'X')
-		counter = 
+	// else if (*format == 'x')
+	// 	counter = 
+	// else if (*format == 'X')
+	// 	counter = 
 	else if (*format == '%')
-		counter = ft_putchar('%');
+		counter = ft_putchar_src('%');
 	return (counter);
 }
 
@@ -53,7 +53,7 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			check = count_printed(args, format);
+			check = print_and_count(args, format);
 			if (check > -1)
 				counter += check;
 			else
@@ -65,4 +65,16 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	return (counter);
+}
+
+int	main(void)
+{
+	int	size;
+	int	size1;
+	char *s = NULL;
+
+	size = printf("%p\n", s);
+	size1 = ft_printf("%p\n", s);
+	printf("%d\n%d", size, size1);
+	return 0;
 }
